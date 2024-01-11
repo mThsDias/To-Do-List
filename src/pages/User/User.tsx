@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import pictureUser from "../../assets/luffy.png";
-import { BsTrash } from "react-icons/bs";
+import { FaTrash } from "react-icons/fa";
 import { Input } from "../../components/Input/Input";
 import "./User.css";
 
@@ -10,23 +10,66 @@ function User() {
   const [taskDay, setTaskDay] = useState<string[]>([]);
   const [taskNight, setTaskNight] = useState<string[]>([]);
   const [selectedTask, setSelectedTask] = useState<string>("day");
+  const [taskDoneDay, setTaskDoneDay] = useState<boolean[]>(
+    new Array(10).fill(false)
+  );
+  const [taskDoneNight, setTaskDoneNight] = useState<boolean[]>(
+    new Array(10).fill(false)
+  );
 
   const { name } = useParams<{ name: string }>();
+
+  const handleCheckboxChange = (index: number, period: string) => {
+    if (period === "day") {
+      const updatedTasksDone = [...taskDoneDay];
+      updatedTasksDone[index] = !updatedTasksDone[index];
+      setTaskDoneDay(updatedTasksDone);
+    } else {
+      const updatedTasksDone = [...taskDoneNight];
+      updatedTasksDone[index] = !updatedTasksDone[index];
+      setTaskDoneNight(updatedTasksDone);
+    }
+  };
 
   const handleTask = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTask(event.target.value);
   };
 
+  const MAX_TASK_LENGTH = 50;
+
   const handleAddTask = () => {
     const newTask = task.trim();
 
     if (newTask !== "") {
-      if (selectedTask === "day") {
-        setTaskDay([...taskDay, newTask]);
+      if (newTask.length <= MAX_TASK_LENGTH) {
+        let updatedTasks;
+
+        if (selectedTask === "day") {
+          if (!taskDay.includes(newTask) && taskDay.length < 9) {
+            updatedTasks = [...taskDay, newTask];
+            setTaskDay(updatedTasks);
+            setTaskDoneDay((prevState) => [...prevState, false]);
+          } else if (taskDay.includes(newTask)) {
+            alert("Tarefa já adicionada.");
+          } else {
+            alert("Limite de tarefas para o dia atingido (máximo 9).");
+          }
+        } else {
+          if (taskNight.length < 9) {
+            updatedTasks = [...taskNight, newTask];
+            setTaskNight(updatedTasks);
+            setTaskDoneNight((prevState) => [...prevState, false]);
+          } else if (taskNight.includes(newTask)) {
+            alert("Tarefa já adicionada.");
+          } else {
+            alert("Limite de tarefas para a noite atingido (máximo 9).");
+          }
+        }
+
+        setTask("");
       } else {
-        setTaskNight([...taskNight, newTask]);
+        alert(`Limite de caracteres excedido (máximo ${MAX_TASK_LENGTH}).`);
       }
-      setTask("");
     }
   };
 
@@ -35,10 +78,18 @@ function User() {
       const updatedTasksDay = [...taskDay];
       updatedTasksDay.splice(index, 1);
       setTaskDay(updatedTasksDay);
+
+      const updatedDoneDay = [...taskDoneDay];
+      updatedDoneDay.splice(index, 1);
+      setTaskDoneDay(updatedDoneDay);
     } else {
       const updatedTasksNight = [...taskNight];
       updatedTasksNight.splice(index, 1);
       setTaskNight(updatedTasksNight);
+
+      const updatedDoneNight = [...taskDoneNight];
+      updatedDoneNight.splice(index, 1);
+      setTaskDoneNight(updatedDoneNight);
     }
   };
 
@@ -101,7 +152,7 @@ function User() {
               onSubmit={handleSubmit}
             />
           </div>
-          <div className="teste">
+          <div className="box-task-buttons">
             <div onClick={handleAddTask} className="button-task">
               <span>Adicionar</span>
             </div>
@@ -116,28 +167,53 @@ function User() {
               </select>
             </div>
           </div>
-          <div className="tasks">
-            <div className="teste-1">
-              <span>Dia</span>
-              <span>Noite</span>
+
+          <div className="box-day-night">
+            <div>
+              <span className="box-day">Dia</span>
             </div>
-            <div className="teste-2">
-              <div className="task-day">
-                {taskDay.map((task, index) => (
-                  <div className="card-task" key={index}>
-                    <span className="teste">{task}</span>
-                    <BsTrash onClick={() => handleRemoveTask(index, "day")} />
+            <div>
+              <span className="box-night">Noite</span>
+            </div>
+          </div>
+          <div className="card-tasks">
+            <div className="box-card">
+              {taskDay.map((task, index) => (
+                <div className="card" key={index}>
+                  <ul>
+                    <li>{task}</li>
+                  </ul>
+                  <div className="check-trash">
+                    <input
+                      type="checkbox"
+                      checked={taskDoneDay[index]}
+                      onChange={() => handleCheckboxChange(index, "day")}
+                    />
+                    <div className="svg">
+                      <FaTrash onClick={() => handleRemoveTask(index, "day")} />
+                    </div>
                   </div>
-                ))}
-              </div>
-              <div className="task-night">
-                {taskNight.map((task, index) => (
-                  <div className="card-task" key={index}>
-                    <span className="teste">{task}</span>
-                    <BsTrash onClick={() => handleRemoveTask(index, "night")} />
+                </div>
+              ))}
+            </div>
+            <div className="box-card">
+              {taskNight.map((task, index) => (
+                <div className="card" key={index}>
+                  <span>{task}</span>
+                  <div className="check-trash">
+                    <input
+                      type="checkbox"
+                      checked={taskDoneNight[index]}
+                      onChange={() => handleCheckboxChange(index, "night")}
+                    />
+                    <div className="svg">
+                      <FaTrash
+                        onClick={() => handleRemoveTask(index, "night")}
+                      />
+                    </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -7,22 +7,22 @@
 }
 
 .box-user {
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
 }
 
 .picture-user {
   height: 311px;
+}
 
-  img {
-    width: 311px;
-    height: 311px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px 0px #0000004f;
-  }
+.picture-user img {
+  width: 311px;
+  height: 311px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 0px #0000004f;
 }
 
 .text-user {
@@ -36,12 +36,12 @@
 
 .sub-text {
   color: #dedede;
+}
 
-  p {
-    font-size: 14px;
-    font-weight: 400;
-    padding: 0px 0px 50px 0px;
-  }
+.sub-text p {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0px 0px 50px 0px;
 }
 
 .sub-title {
@@ -51,33 +51,31 @@
   padding: 0px 0px 12px 0px;
 }
 
-.nav-bar {
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    list-style: none;
-  }
+.nav-bar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
 
-  li {
-    width: 400px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #3a7148;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+.nav-bar li {
+  width: 400px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3a7148;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  li:hover {
-    background: #4cba57;
-  }
+.nav-bar li:hover {
+  background: #4cba57;
+}
 
-  a {
-    color: #dedede;
-  }
+.nav-bar a {
+  color: #dedede;
 }
 
 .container-task {
@@ -134,28 +132,6 @@
   font-weight: 500;
 }
 
-.card-task {
-  width: 230px;
-  height: 35px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 2px solid #4cba57;
-  border-radius: 5px;
-  background: #4a5664;
-
-  svg {
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 14px;
-
-    &:hover {
-      color: #4cba57;
-    }
-  }
-}
-
 .task-day {
   display: flex;
   flex-direction: column;
@@ -170,7 +146,7 @@
   gap: 10px;
 }
 
-.teste {
+.box-task-buttons {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -181,34 +157,117 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  select {
-    background: #4a5664;
-    color: #dedede;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 12px;
-    font-weight: 400;
+}
+
+.period-selector select {
+  background: #4a5664;
+  color: #dedede;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.box-day {
+  font-size: 24px;
+  font-weight: 500;
+  color: #dedede;
+}
+
+.box-night {
+  font-size: 24px;
+  font-weight: 500;
+  color: #dedede;
+}
+
+.box-day-night {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 30px 180px 0px 180px;
+}
+
+.card-tasks {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 60px;
+}
+
+.card {
+  width: 260px;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #4cba57;
+  border-radius: 5px;
+  background: #4a5664;
+}
+
+.card svg {
+  color: #dedede;
+  cursor: pointer;
+  transition: 0.1s;
+  font-size: 13px;
+}
+
+.card svg:hover {
+  color: #4cba57;
+}
+
+.box-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #dedede;
+  font-size: 12px;
+}
+
+.check-trash {
+  display: flex;
+  align-items: center;
+}
+
+.check-trash input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.check-trash input[type="checkbox"]:checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+.check-trash .svg {
+  cursor: pointer;
+}
+
+.check-trash input[type="checkbox"] {
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/*MEDIA QUERIE*/
+
+@media (max-width: 1200px) {
+  .container-section-user {
+    padding: 50px 150px;
   }
 }
 
-.teste {
-  font-size: 12px;
-  color: #dedede;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+@media (max-width: 1000px) {
+  .container-section-user {
+    padding: 50px 100px;
+  }
 }
 
-.teste-1 {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 10px;
-}
-
-.teste-2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+@media (max-width: 800px) {
+  .container-section-user {
+    padding: 50px 50px;
+  }
 }
