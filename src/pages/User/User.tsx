@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import pictureUser from "../../assets/luffy.png";
+import { BsTrash } from "react-icons/bs";
 import { Input } from "../../components/Input/Input";
 import "./User.css";
 
 function User() {
   const [task, setTask] = useState<string>("");
-  const [tasks, setTasks] = useState<string[]>([]);
+  const [taskDay, setTaskDay] = useState<string[]>([]);
+  const [taskNight, setTaskNight] = useState<string[]>([]);
+  const [selectedTask, setSelectedTask] = useState<string>("day");
 
   const { name } = useParams<{ name: string }>();
 
@@ -15,12 +18,33 @@ function User() {
   };
 
   const handleAddTask = () => {
-    const task = document.getElementById("task") as HTMLInputElement;
-    setTasks([...tasks, task.value]);
+    const newTask = task.trim();
+
+    if (newTask !== "") {
+      if (selectedTask === "day") {
+        setTaskDay([...taskDay, newTask]);
+      } else {
+        setTaskNight([...taskNight, newTask]);
+      }
+      setTask("");
+    }
+  };
+
+  const handleRemoveTask = (index: number, period: string) => {
+    if (period === "day") {
+      const updatedTasksDay = [...taskDay];
+      updatedTasksDay.splice(index, 1);
+      setTaskDay(updatedTasksDay);
+    } else {
+      const updatedTasksNight = [...taskNight];
+      updatedTasksNight.splice(index, 1);
+      setTaskNight(updatedTasksNight);
+    }
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     handleAddTask();
   };
 
@@ -48,16 +72,16 @@ function User() {
         <menu className="nav-bar">
           <ul>
             <li>
-              <a href="">Link 1</a>
+              <a href="#">Link 1</a>
             </li>
             <li>
-              <a href="">Link 2</a>
+              <a href="#">Link 2</a>
             </li>
             <li>
-              <a href="">Link 3</a>
+              <a href="#">Link 3</a>
             </li>
             <li>
-              <a href="">Link 4</a>
+              <a href="#">Link 4</a>
             </li>
           </ul>
         </menu>
@@ -77,18 +101,43 @@ function User() {
               onSubmit={handleSubmit}
             />
           </div>
-          <div onClick={handleAddTask} className="button-task">
-            <span>Adicionar</span>
+          <div className="teste">
+            <div onClick={handleAddTask} className="button-task">
+              <span>Adicionar</span>
+            </div>
+            <div className="period-selector">
+              <select
+                id="period"
+                value={selectedTask}
+                onChange={(e) => setSelectedTask(e.target.value)}
+              >
+                <option value="day">Dia</option>
+                <option value="night">Noite</option>
+              </select>
+            </div>
           </div>
           <div className="tasks">
-            <div className="task-dia">
+            <div className="teste-1">
               <span>Dia</span>
-              {tasks.map((task) => (
-                <p>{task}</p>
-              ))}
-            </div>
-            <div className="task-noite">
               <span>Noite</span>
+            </div>
+            <div className="teste-2">
+              <div className="task-day">
+                {taskDay.map((task, index) => (
+                  <div className="card-task" key={index}>
+                    <span className="teste">{task}</span>
+                    <BsTrash onClick={() => handleRemoveTask(index, "day")} />
+                  </div>
+                ))}
+              </div>
+              <div className="task-night">
+                {taskNight.map((task, index) => (
+                  <div className="card-task" key={index}>
+                    <span className="teste">{task}</span>
+                    <BsTrash onClick={() => handleRemoveTask(index, "night")} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -60,7 +60,7 @@
   }
 
   li {
-    width: 380px;
+    width: 400px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -109,7 +109,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 280px;
+  width: 210px;
   height: 32px;
   background: #3a7148;
   border-radius: 5px;
@@ -126,10 +126,89 @@
 .tasks {
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding: 70px 0px;
   font-size: 24px;
   color: #dedede;
   font-weight: 500;
+}
+
+.card-task {
+  width: 230px;
+  height: 35px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #4cba57;
+  border-radius: 5px;
+  background: #4a5664;
+
+  svg {
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+
+    &:hover {
+      color: #4cba57;
+    }
+  }
+}
+
+.task-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-night {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.teste {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.period-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  select {
+    background: #4a5664;
+    color: #dedede;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.teste {
+  font-size: 12px;
+  color: #dedede;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.teste-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.teste-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
