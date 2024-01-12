@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import pictureUser from "../../assets/luffy.png";
 import { FaTrash } from "react-icons/fa";
@@ -8,15 +8,45 @@ import "./User.css";
 
 function User() {
   const [task, setTask] = useState<string>("");
-  const [taskDay, setTaskDay] = useState<string[]>([]);
-  const [taskNight, setTaskNight] = useState<string[]>([]);
+  const [taskDay, setTaskDay] = useState<string[]>(() => {
+    const savedTaskDay = localStorage.getItem("taskDay");
+    return savedTaskDay ? JSON.parse(savedTaskDay) : [];
+  });
+  const [taskNight, setTaskNight] = useState<string[]>(() => {
+    const savedTaskNight = localStorage.getItem("taskNight");
+    return savedTaskNight ? JSON.parse(savedTaskNight) : [];
+  });
   const [selectedTask, setSelectedTask] = useState<string>("day");
-  const [taskDoneDay, setTaskDoneDay] = useState<boolean[]>(
-    new Array(10).fill(false)
-  );
-  const [taskDoneNight, setTaskDoneNight] = useState<boolean[]>(
-    new Array(10).fill(false)
-  );
+  const [taskDoneDay, setTaskDoneDay] = useState<boolean[]>(() => {
+    const savedTaskDoneDay = localStorage.getItem("taskDoneDay");
+    return savedTaskDoneDay
+      ? JSON.parse(savedTaskDoneDay)
+      : new Array(10).fill(false);
+  });
+  const [taskDoneNight, setTaskDoneNight] = useState<boolean[]>(() => {
+    const savedTaskDoneNight = localStorage.getItem("taskDoneNight");
+    return savedTaskDoneNight
+      ? JSON.parse(savedTaskDoneNight)
+      : new Array(10).fill(false);
+  });
+
+  useEffect(() => {
+    localStorage.setItem("taskDay", JSON.stringify(taskDay));
+    localStorage.setItem("taskNight", JSON.stringify(taskNight));
+    localStorage.setItem("taskDoneDay", JSON.stringify(taskDoneDay));
+    localStorage.setItem("taskDoneNight", JSON.stringify(taskDoneNight));
+  }, [taskDay, taskNight, taskDoneDay, taskDoneNight]);
+
+  useEffect(() => {
+    const savedTaskDay = localStorage.getItem("taskDay");
+    console.log("Saved taskDay:", savedTaskDay);
+    const savedTaskNight = localStorage.getItem("taskNight");
+    console.log("Saved taskNight:", savedTaskNight);
+    const savedTaskDoneDay = localStorage.getItem("taskDoneDay");
+    console.log("Saved taskDoneDay:", savedTaskDoneDay);
+    const savedTaskDoneNight = localStorage.getItem("taskDoneNight");
+    console.log("Saved taskDoneNight:", savedTaskDoneNight);
+  }, []);
 
   const { name } = useParams<{ name: string }>();
 
