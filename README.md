@@ -1,7 +1,6 @@
 <h1>To do List</h1> 
 
 
-
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
@@ -21,7 +20,7 @@
 
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
-
+____________________________________
 
 ## Descrição do projeto 
 
@@ -29,7 +28,7 @@
  O projeto consiste em uma aplicação To-Do List desenvolvida em React, oferecendo aos usuários uma plataforma intuitiva e eficaz para gerenciar suas tarefas diárias. A escolha pelo React proporciona uma experiência de usuário dinâmica e responsiva, permitindo a fácil adição, remoção e acompanhamento de tarefas. A aplicação destaca-se pela simplicidade e pela interface amigável, oferecendo funcionalidades de organização tanto para tarefas diurnas quanto noturnas. Além disso, a documentação detalhada facilita a compreensão do projeto, tornando-o acessível para usuários e desenvolvedores.
 </p>
 
-
+____________________________________
 
 ## Funcionalidades
 
@@ -47,11 +46,16 @@
 
 :heavy_check_mark: Seleção de Período: Permite alternar entre os períodos diurno e noturno para melhor organização das tarefas.
 
+
+
 <div align="center">
+  
 ![home](https://github.com/mThsDias/To-Do-List/assets/125693787/92cf8b20-b88c-4b95-bd11-8403f2a31e37)
 ![user](https://github.com/mThsDias/To-Do-List/assets/125693787/27bdd961-dcf1-47e0-aa69-32a2cb0a28b2)
 ![user-task](https://github.com/mThsDias/To-Do-List/assets/125693787/70b960d5-7836-4677-9039-97c0229ac264)
+
 </div>
+
 
 
 ## Pré-requisitos
@@ -76,7 +80,7 @@ Execute a Aplicação Localmente:
 npm run dev
 ```
 
-
+____________________________________
 
 ## Como Usar
 
@@ -107,7 +111,7 @@ Após inserir o nome, você será redirecionado para a To-Do List.
     Responsividade:
     A aplicação é responsiva, adaptando-se a diferentes tamanhos de tela para uma melhor experiência do usuário.
 
-
+____________________________________
 
 ## Linguagens, dependencias e libs utilizadas :books:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
@@ -116,7 +120,7 @@ Após inserir o nome, você será redirecionado para a To-Do List.
 - [React Router DOM](https://reactrouter.com/en/main)
 - [React Icons](https://react-icons.github.io/react-icons/)
 
-
+____________________________________
 
 ## Desenvolvedores/Contribuintes :octocat:
 
