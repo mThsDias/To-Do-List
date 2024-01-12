@@ -1,12 +1,15 @@
 <h1>To do List</h1> 
 
+
+
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
-  <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 </p>
 
+
 > Status do Projeto: :heavy_check_mark: :warning: (concluido)
+
 
 ### Tópicos 
 
@@ -18,11 +21,15 @@
 
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
+
+
 ## Descrição do projeto 
 
 <p align="justify">
  O projeto consiste em uma aplicação To-Do List desenvolvida em React, oferecendo aos usuários uma plataforma intuitiva e eficaz para gerenciar suas tarefas diárias. A escolha pelo React proporciona uma experiência de usuário dinâmica e responsiva, permitindo a fácil adição, remoção e acompanhamento de tarefas. A aplicação destaca-se pela simplicidade e pela interface amigável, oferecendo funcionalidades de organização tanto para tarefas diurnas quanto noturnas. Além disso, a documentação detalhada facilita a compreensão do projeto, tornando-o acessível para usuários e desenvolvedores.
 </p>
+
+
 
 ## Funcionalidades
 
@@ -42,6 +49,8 @@
 
 
 Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
+
+
 
 ## Pré-requisitos
 
@@ -65,15 +74,16 @@ Execute a Aplicação Localmente:
 npm run dev
 ```
 
-... 
 
-## Casos de Uso
+
+## Como Usar
 
 Insira o Nome:
 Na página inicial, você verá um campo para inserir o nome. Digite o seu nome e pressione "Enter" ou clique no botão para prosseguir.
 
 Redirecionamento para a To-Do List:
 Após inserir o nome, você será redirecionado para a To-Do List.
+
 
 ## To-Do List
 
@@ -96,19 +106,16 @@ Após inserir o nome, você será redirecionado para a To-Do List.
     A aplicação é responsiva, adaptando-se a diferentes tamanhos de tela para uma melhor experiência do usuário.
 
 
+
 ## Linguagens, dependencias e libs utilizadas :books:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
 - [Vite](https://vitejs.dev/)
-- React Router DOM
-- React Icons
+- [React Router DOM](https://reactrouter.com/en/main)
+- [React Icons](https://react-icons.github.io/react-icons/)
+
+
 
 ## Desenvolvedores/Contribuintes :octocat:
 
 - Matheus Dias
-
-## Licença 
-
-The [MIT License]() (MIT)
-
-Copyright :copyright: 2023 - To do List
