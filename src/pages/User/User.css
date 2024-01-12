@@ -81,7 +81,7 @@
 
 .container-task {
   width: 680px;
-  height: 720px;
+  height: 690px;
   border: 1px solid #4cba57;
   border-radius: 5px;
 }
@@ -528,7 +528,7 @@
 
   .container-task {
     width: 250px;
-    height: 570px;
+    height: 550px;
   }
 
   .card-tasks {
