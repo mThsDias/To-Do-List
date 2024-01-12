@@ -47,10 +47,6 @@ Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
 
 :warning: [Node](https://nodejs.org/en/download/)
 
-...
-
-Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação 
-
 ## Como rodar a aplicação :arrow_forward:
 
 No terminal, clone o projeto: 
@@ -101,7 +97,7 @@ Após inserir o nome, você será redirecionado para a To-Do List.
 
 
 ## Linguagens, dependencias e libs utilizadas :books:
-- [JavaScript] (https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
 - [Vite](https://vitejs.dev/)
 - React Router DOM
@@ -109,10 +105,7 @@ Após inserir o nome, você será redirecionado para a To-Do List.
 
 ## Desenvolvedores/Contribuintes :octocat:
 
-Liste o time responsável pelo desenvolvimento do projeto
-
-| <br><sub>Matheus Dias</sub>](https://github.com/mThsDias) |
-| :---: | :---: | :---: 
+- Matheus Dias
 
 ## Licença 
 
