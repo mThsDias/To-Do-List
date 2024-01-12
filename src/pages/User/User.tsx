@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import pictureUser from "../../assets/luffy.png";
 import { FaTrash } from "react-icons/fa";
 import { Input } from "../../components/Input/Input";
+import "../../media-querie/responsiveUser.css";
 import "./User.css";
 
 function User() {
@@ -35,7 +36,7 @@ function User() {
     setTask(event.target.value);
   };
 
-  const MAX_TASK_LENGTH = 50;
+  const MAX_TASK_LENGTH = 22;
 
   const handleAddTask = () => {
     const newTask = task.trim();

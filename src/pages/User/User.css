@@ -1,32 +1,33 @@
 .container-section-user {
   height: 120vh;
+  padding: 100px 0px;
   background: #212832;
-  padding: 50px 250px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .box-user {
   width: 400px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .picture-user {
-  height: 311px;
+  height: 250px;
 }
 
 .picture-user img {
-  width: 311px;
-  height: 311px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0px 0px 10px 0px #0000004f;
 }
 
 .text-user {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
   background-image: linear-gradient(to bottom, #4cba57, #3a7148);
   -webkit-background-clip: text;
@@ -38,17 +39,17 @@
   color: #dedede;
 }
 
-.sub-text p {
-  font-size: 14px;
-  font-weight: 400;
-  padding: 0px 0px 50px 0px;
-}
-
 .sub-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #dedede;
   padding: 0px 0px 12px 0px;
+}
+
+.sub-text p {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0px 0px 20px 0px;
 }
 
 .nav-bar ul {
@@ -60,7 +61,7 @@
 
 .nav-bar li {
   width: 400px;
-  height: 40px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,8 +80,8 @@
 }
 
 .container-task {
-  width: 830px;
-  height: 830px;
+  width: 680px;
+  height: 720px;
   border: 1px solid #4cba57;
   border-radius: 5px;
 }
@@ -88,8 +89,8 @@
 .title-task {
   display: flex;
   justify-content: center;
-  padding: 50px 0px;
-  font-size: 36px;
+  padding: 15px 0px 15px 0px;
+  font-size: 32px;
   font-weight: 500;
   background-image: linear-gradient(to bottom, #4cba57, #3a7148);
   -webkit-background-clip: text;
@@ -108,7 +109,7 @@
   justify-content: center;
   align-items: center;
   width: 210px;
-  height: 32px;
+  height: 30px;
   background: #3a7148;
   border-radius: 5px;
   color: #dedede;
@@ -119,31 +120,6 @@
 
 .button-task:hover {
   background: #4cba57;
-}
-
-.tasks {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 70px 0px;
-  font-size: 24px;
-  color: #dedede;
-  font-weight: 500;
-}
-
-.task-day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.task-night {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
 }
 
 .box-task-buttons {
@@ -169,13 +145,13 @@
 }
 
 .box-day {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   color: #dedede;
 }
 
 .box-night {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   color: #dedede;
 }
@@ -184,19 +160,19 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 30px 180px 0px 180px;
+  padding: 40px 175px 0px 175px;
 }
 
 .card-tasks {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 0px 60px;
+  padding: 0px 70px;
 }
 
 .card {
-  width: 260px;
-  height: 40px;
+  width: 240px;
+  height: 35px;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -210,7 +186,7 @@
   color: #dedede;
   cursor: pointer;
   transition: 0.1s;
-  font-size: 13px;
+  font-size: 9px;
 }
 
 .card svg:hover {
@@ -222,7 +198,7 @@
   flex-direction: column;
   gap: 10px;
   color: #dedede;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .check-trash {
@@ -231,8 +207,8 @@
 }
 
 .check-trash input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 8px;
@@ -250,24 +226,4 @@
 
 .check-trash input[type="checkbox"] {
   transition: background-color 0.3s, border-color 0.3s;
-}
-
-/*MEDIA QUERIE*/
-
-@media (max-width: 1200px) {
-  .container-section-user {
-    padding: 50px 150px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .container-section-user {
-    padding: 50px 100px;
-  }
-}
-
-@media (max-width: 800px) {
-  .container-section-user {
-    padding: 50px 50px;
-  }
 }

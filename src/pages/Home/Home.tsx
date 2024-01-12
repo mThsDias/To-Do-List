@@ -3,6 +3,7 @@ import { Input } from "../../components/Input/Input";
 import { Modal } from "../../components/Modal/Modal";
 import { useNavigate } from "react-router-dom";
 import bg from "../../assets/bg-green.png";
+import "../../media-querie/responsiveHome.css";
 import "./Home.css";
 
 function Home() {
