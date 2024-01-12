@@ -5,8 +5,9 @@ type InputProps = {
   type: string;
   name?: string;
   placeholder?: string;
-  id: string;
+  id?: string;
   value?: string;
+  checked?: boolean;
   onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
@@ -17,6 +18,7 @@ export const Input = ({
   placeholder,
   id,
   value,
+  checked,
   onSubmit,
   onChange,
 }: InputProps) => {
@@ -32,6 +34,7 @@ export const Input = ({
           value={value}
           onChange={onChange}
           autoComplete="off"
+          checked={checked}
         />
       </form>
     </section>

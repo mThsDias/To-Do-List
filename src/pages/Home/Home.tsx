@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Input } from "../../components/Input/Input";
+import { useModal } from "../../functions";
 import { Modal } from "../../components/Modal/Modal";
 import { useNavigate } from "react-router-dom";
 import bg from "../../assets/bg-green.png";
-import "../../media-querie/responsiveHome.css";
+import "./media-query-home.css";
 import "./Home.css";
 
 function Home() {
   const [name, setName] = useState<string>("");
-  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+
+  const { isOpen, modalMessage, closeModal, openModal } = useModal();
 
   const navigate = useNavigate();
 
@@ -18,14 +20,10 @@ function Home() {
 
   const handleInputClick = () => {
     if (name === "") {
-      setModalIsOpen(true);
+      openModal("Por favor, digite seu nome!");
     } else {
       navigate(`/user/${name}`);
     }
-  };
-
-  const handleCloseModal = () => {
-    setModalIsOpen(false);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -59,11 +57,7 @@ function Home() {
           <span onClick={handleInputClick}>Entrar</span>
         </div>
       </div>
-      {modalIsOpen && (
-        <Modal onClose={handleCloseModal}>
-          <span className="text-modal">Por favor, digite seu nome!</span>
-        </Modal>
-      )}
+      {isOpen && <Modal onClose={closeModal}>{modalMessage}</Modal>}
     </section>
   );
 }

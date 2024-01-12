@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import pictureUser from "../../assets/luffy.png";
-import { FaTrash } from "react-icons/fa";
 import { Input } from "../../components/Input/Input";
-import "../../media-querie/responsiveUser.css";
+import { useModal } from "../../functions";
+import { Modal } from "../../components/Modal/Modal";
+import { Card } from "../../components/CardTask/Card";
+import "./media-querie.css";
 import "./User.css";
 
 function User() {
@@ -29,6 +31,8 @@ function User() {
       ? JSON.parse(savedTaskDoneNight)
       : new Array(10).fill(false);
   });
+
+  const { isOpen, modalMessage, closeModal, openModal } = useModal();
 
   useEffect(() => {
     localStorage.setItem("taskDay", JSON.stringify(taskDay));
@@ -76,30 +80,30 @@ function User() {
         let updatedTasks;
 
         if (selectedTask === "day") {
-          if (!taskDay.includes(newTask) && taskDay.length < 9) {
+          if (taskDay.includes(newTask)) {
+            openModal("Tarefa já adicionada!");
+          } else if (taskDay.length < 9) {
             updatedTasks = [...taskDay, newTask];
             setTaskDay(updatedTasks);
             setTaskDoneDay((prevState) => [...prevState, false]);
-          } else if (taskDay.includes(newTask)) {
-            alert("Tarefa já adicionada.");
           } else {
-            alert("Limite de tarefas para o dia atingido (máximo 9).");
+            openModal("Limite de tarefas  atingido!");
           }
         } else {
-          if (taskNight.length < 9) {
+          if (taskNight.includes(newTask)) {
+            openModal("Tarefa já adicionada!");
+          } else if (taskNight.length < 9) {
             updatedTasks = [...taskNight, newTask];
             setTaskNight(updatedTasks);
             setTaskDoneNight((prevState) => [...prevState, false]);
-          } else if (taskNight.includes(newTask)) {
-            alert("Tarefa já adicionada.");
           } else {
-            alert("Limite de tarefas para a noite atingido (máximo 9).");
+            openModal("Limite de tarefas atingido!");
           }
         }
 
         setTask("");
       } else {
-        alert(`Limite de caracteres excedido (máximo ${MAX_TASK_LENGTH}).`);
+        openModal("Limite de caracteres atingido!");
       }
     }
   };
@@ -183,6 +187,7 @@ function User() {
               onSubmit={handleSubmit}
             />
           </div>
+          {isOpen && <Modal onClose={closeModal}>{modalMessage}</Modal>}
           <div className="box-task-buttons">
             <div onClick={handleAddTask} className="button-task">
               <span>Adicionar</span>
@@ -210,40 +215,24 @@ function User() {
           <div className="card-tasks">
             <div className="box-card">
               {taskDay.map((task, index) => (
-                <div className="card" key={index}>
-                  <ul>
-                    <li>{task}</li>
-                  </ul>
-                  <div className="check-trash">
-                    <input
-                      type="checkbox"
-                      checked={taskDoneDay[index]}
-                      onChange={() => handleCheckboxChange(index, "day")}
-                    />
-                    <div className="svg">
-                      <FaTrash onClick={() => handleRemoveTask(index, "day")} />
-                    </div>
-                  </div>
-                </div>
+                <Card
+                  key={task}
+                  task={task}
+                  checked={taskDoneDay[index]}
+                  onChange={() => handleCheckboxChange(index, "day")}
+                  onRemove={() => handleRemoveTask(index, "day")}
+                />
               ))}
             </div>
             <div className="box-card">
               {taskNight.map((task, index) => (
-                <div className="card" key={index}>
-                  <span>{task}</span>
-                  <div className="check-trash">
-                    <input
-                      type="checkbox"
-                      checked={taskDoneNight[index]}
-                      onChange={() => handleCheckboxChange(index, "night")}
-                    />
-                    <div className="svg">
-                      <FaTrash
-                        onClick={() => handleRemoveTask(index, "night")}
-                      />
-                    </div>
-                  </div>
-                </div>
+                <Card
+                  key={task}
+                  task={task}
+                  checked={taskDoneNight[index]}
+                  onChange={() => handleCheckboxChange(index, "night")}
+                  onRemove={() => handleRemoveTask(index, "night")}
+                />
               ))}
             </div>
           </div>
