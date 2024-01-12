@@ -4,7 +4,6 @@ import { useModal } from "../../functions";
 import { Modal } from "../../components/Modal/Modal";
 import { useNavigate } from "react-router-dom";
 import bg from "../../assets/bg-green.png";
-import "./media-query-home.css";
 import "./Home.css";
 
 function Home() {

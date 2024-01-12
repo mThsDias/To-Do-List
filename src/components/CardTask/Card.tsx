@@ -1,6 +1,5 @@
 import { FaTrash } from "react-icons/fa";
 import { Input } from "../Input/Input";
-import "../../media-querie/responsiveUser.css";
 
 type CardProps = {
   task: string;

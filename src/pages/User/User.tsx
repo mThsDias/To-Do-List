@@ -5,7 +5,6 @@ import { Input } from "../../components/Input/Input";
 import { useModal } from "../../functions";
 import { Modal } from "../../components/Modal/Modal";
 import { Card } from "../../components/CardTask/Card";
-import "./media-querie.css";
 import "./User.css";
 
 function User() {

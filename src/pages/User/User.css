@@ -227,3 +227,352 @@
 .check-trash input[type="checkbox"] {
   transition: background-color 0.3s, border-color 0.3s;
 }
+
+/* MEDIA QUERIE */
+
+@media (max-width: 1600px) {
+  .container-section-user {
+    padding: 30px 100px;
+  }
+}
+
+@media (max-width: 1310px) {
+  .container-section-user {
+    padding: 100px 10px;
+  }
+  .container-task {
+    width: 650px;
+    height: 640px;
+  }
+
+  .box-user img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .picture-user {
+    height: 150px;
+  }
+
+  .box-day-night {
+    padding: 5px 170px 0px 170px;
+  }
+
+  .container-input {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .container-section-user {
+    padding: 100px 0px;
+  }
+
+  .box-user {
+    width: 200px;
+  }
+
+  .box-user img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .picture-user {
+    height: 130px;
+  }
+
+  .text-user {
+    font-size: 20px;
+    padding: 10px 0px 30px 0px;
+  }
+
+  .sub-title {
+    font-size: 12px;
+  }
+
+  .sub-text p {
+    font-size: 10px;
+  }
+
+  .nav-bar li {
+    width: 200px;
+  }
+
+  .container-task {
+    width: 510px;
+    height: 640px;
+  }
+
+  .card-tasks {
+    padding: 0px 20px;
+  }
+
+  .title-task {
+    padding: 20px 0px 5px 0px;
+  }
+
+  .box-card {
+    font-size: 10px;
+  }
+
+  .card-tasks {
+    padding: 0px 15px;
+  }
+
+  .card {
+    width: 220px;
+    height: 35px;
+  }
+
+  .box-day-night {
+    padding: 30px 110px 0px 110px;
+  }
+
+  .container-input input {
+    width: 200px;
+    height: 30px;
+  }
+
+  .button-task {
+    width: 130px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .box-day {
+    font-size: 18px;
+  }
+
+  .box-night {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 720px) {
+  .container-section-user {
+    padding: 100px 0px;
+  }
+
+  .box-user {
+    width: 115px;
+  }
+
+  .box-user img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .picture-user {
+    height: 100px;
+  }
+
+  .text-user {
+    font-size: 16px;
+    padding: 10px 0px 30px 0px;
+  }
+
+  .sub-title {
+    font-size: 10px;
+  }
+
+  .sub-text p {
+    font-size: 8px;
+  }
+
+  .nav-bar li {
+    width: 115px;
+  }
+
+  .container-task {
+    width: 370px;
+    height: 600px;
+  }
+
+  .card-tasks {
+    padding: 0px 5px;
+  }
+
+  .title-task {
+    padding: 20px 0px 5px 0px;
+  }
+
+  .box-card {
+    font-size: 8px;
+  }
+
+  .card-tasks {
+    padding: 0px 20px;
+  }
+
+  .card {
+    width: 155px;
+    height: 30px;
+  }
+
+  .box-day-night {
+    padding: 30px 80px 0px 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-section-user {
+    padding: 70px 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container-section-user {
+    padding: 70px 10px;
+  }
+
+  .box-user {
+    width: 100px;
+  }
+
+  .box-user img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .picture-user {
+    height: 80px;
+  }
+
+  .text-user {
+    font-size: 14px;
+    padding: 10px 0px 30px 0px;
+  }
+
+  .sub-title {
+    font-size: 8px;
+  }
+
+  .sub-text p {
+    font-size: 6px;
+  }
+
+  .nav-bar li {
+    width: 100px;
+  }
+
+  .container-task {
+    width: 300px;
+    height: 600px;
+  }
+
+  .card-tasks {
+    padding: 0px 5px;
+  }
+
+  .title-task {
+    padding: 20px 0px 5px 0px;
+  }
+
+  .box-card {
+    font-size: 6px;
+  }
+
+  .card-tasks {
+    padding: 0px 20px;
+  }
+
+  .card {
+    width: 130px;
+    height: 30px;
+  }
+
+  .box-day-night {
+    padding: 30px 60px 0px 60px;
+  }
+}
+
+@media (max-width: 428px) {
+  .container-section-user {
+    padding: 20px 0px;
+  }
+
+  .box-user {
+    width: 80px;
+  }
+
+  .box-user img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .picture-user {
+    height: 60px;
+  }
+
+  .text-user {
+    font-size: 12px;
+    padding: 10px 0px 20px 0px;
+  }
+
+  .sub-title {
+    font-size: 6px;
+  }
+
+  .sub-text p {
+    font-size: 4px;
+  }
+
+  .nav-bar li {
+    width: 80px;
+    height: 20px;
+  }
+
+  .nav-bar a {
+    font-size: 10px;
+  }
+
+  .container-task {
+    width: 250px;
+    height: 570px;
+  }
+
+  .card-tasks {
+    padding: 0px 5px;
+  }
+
+  .title-task {
+    font-size: 16px;
+    padding: 20px 0px 5px 0px;
+  }
+
+  .box-card {
+    font-size: 7px;
+  }
+
+  .card-tasks {
+    padding: 0px 10px;
+  }
+
+  .card {
+    width: 110px;
+    height: 30px;
+  }
+
+  .box-day-night {
+    padding: 30px 50px 0px 50px;
+  }
+
+  .container-input input {
+    width: 150px;
+    height: 30px;
+  }
+
+  .button-task {
+    width: 80px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .box-day {
+    font-size: 14px;
+  }
+
+  .box-night {
+    font-size: 14px;
+  }
+}
