@@ -47,9 +47,11 @@
 
 :heavy_check_mark: Seleção de Período: Permite alternar entre os períodos diurno e noturno para melhor organização das tarefas.
 
-
-Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
-
+<div align="center">
+![home](https://github.com/mThsDias/To-Do-List/assets/125693787/92cf8b20-b88c-4b95-bd11-8403f2a31e37)
+![user](https://github.com/mThsDias/To-Do-List/assets/125693787/27bdd961-dcf1-47e0-aa69-32a2cb0a28b2)
+![user-task](https://github.com/mThsDias/To-Do-List/assets/125693787/70b960d5-7836-4677-9039-97c0229ac264)
+</div>
 
 
 ## Pré-requisitos
